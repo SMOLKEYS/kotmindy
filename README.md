@@ -70,7 +70,7 @@ fun main(){
         Log.info("$this")
     }
     
-    updateT{ if(Random.nextBoolean()) Log.warn("Be warned!") }
+    onUpdate{ if(Random.nextBoolean()) Log.warn("Be warned!") }
 }
 
 ```
