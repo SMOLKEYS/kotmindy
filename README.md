@@ -6,4 +6,8 @@ A library for kotlin mindustry mods which adds some utilities.
 
 Yet to be made.
 
-## Usag
+## Implementation
+
+```
+implementation("com.github.SMOLKEYS:kotmindy:<shortcommit/version>")
+```
