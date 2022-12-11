@@ -44,7 +44,7 @@ tasks.jar{
 publishing{
     publications{
         create<MavenPublication>("maven"){
-            groupId = "com.github.smol"
+            groupId = "com.github.smolkeys"
             artifactId = "kotmindy"
             version = "v0.1"
             
