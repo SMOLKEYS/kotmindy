@@ -1,7 +1,5 @@
 package com.github.smol.kotmindy
 
-import com.github.smol.kotmindy
-
 typealias BlankRun = () -> Unit
 
 data class MutablePair<A, B>(var first: A, var second: B)

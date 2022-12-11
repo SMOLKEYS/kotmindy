@@ -5,14 +5,17 @@ import mindustry.world.*
 import com.github.smol.kotmindy.mindustry.*
 
 
-fun <T : Building> forEachBuild(predicate: (T) -> Boolean = { it is T }, cons: T.() -> Unit){
-    Groups.build.each{
-        if(predicate(it) && it is T) cons(it)
-    }
+inline fun <reified T : Building> forEachBuild(
+    crossinline predicate: (T) -> Boolean = { it is T },
+    crossinline cons: T.() -> Unit
+) = Groups.build.each{
+    if(predicate(it) && it is T) cons(it)
 }
 
-fun <T : MUnit> forEachUnit(predicate: (T) -> Boolean = { it is T }, cons: T.() -> Unit){
-    Groups.unit.each{
-        if(predicate(it) && it is T) cons(it)
-    }
+
+inline fun <T : MUnit> forEachUnit(
+    crossinline predicate: (T) -> Boolean = { it is T },
+    crossinline cons: T.() -> Unit
+) = Groups.unit.each{
+    if(predicate(it) && it is T) cons(it)
 }
