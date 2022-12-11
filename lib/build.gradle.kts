@@ -23,6 +23,7 @@ repositories {
 val mV = "v140"
 
 dependencies {
+	compileOnly(kotlin("stdlib-jdk8"))
     compileOnly("com.github.Anuken.Arc:arc-core:$mV")
     //compileOnly("com.github.Anuken.Arc:flabel:$mV")
     compileOnly("com.github.Anuken.Mindustry:core:$mV")
