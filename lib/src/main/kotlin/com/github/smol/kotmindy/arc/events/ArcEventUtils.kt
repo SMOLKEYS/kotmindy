@@ -1,7 +1,8 @@
 package com.github.smol.kotmindy.arc.events
 
 import arc.*
+import com.github.smol.kotmindy.*
 
-inline fun <reified T> on(crossinline cons: T.() -> Unit) = Events.on(T::class.java){ cons(it) }
+inline fun <reified T> listen(crossinline cons: T.() -> Unit) = Events.on(T::class.java){ cons(it) }
 
-fun run(event: Any, cons: () -> Unit) = Events.run(event, cons)
+fun listenTrigger(event: Any, cons: BlankRun) = Events.run(event, cons)

@@ -34,10 +34,6 @@ dependencies {
 tasks.jar{
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-    manifest{
-        attributes["Main-Class"] = "com.github.smol.kotmindy.KotMindyKt"
-    }
-
     from(*configurations.runtimeClasspath.files.map { if (it.isDirectory()) it else zipTree(it) }.toTypedArray())
 }
 
