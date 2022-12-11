@@ -67,7 +67,9 @@ fun sectorLaunch(cons: SectorLaunchEvent.() -> Unit) = on<SectorLaunchEvent>(con
 
 fun blockDestroy(cons: BlockDestroyEvent.() -> Unit) = on<BlockDestroyEvent>(cons)
 
-fun blockBuild(cons: BlockBuildEvent.() -> Unit) = on<BlockBuildEvent>(cons)
+fun blockBuildBegin(cons: BlockBuildBeginEvent.() -> Unit) = on<BlockBuildBeginEvent>(cons)
+
+fun blockBuildEnd(cons: BlockBuildEndEvent.() -> Unit) = on<BlockBuildEndEvent>(cons)
 
 fun unitDestroy(cons: UnitDestroyEvent.() -> Unit) = on<UnitDestroyEvent>(cons)
 
