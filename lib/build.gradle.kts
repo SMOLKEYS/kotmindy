@@ -12,6 +12,8 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     java
+    
+    `maven-publish`
 }
 
 repositories {
@@ -37,6 +39,18 @@ tasks.jar{
     }
 
     from(*configurations.runtimeClasspath.files.map { if (it.isDirectory()) it else zipTree(it) }.toTypedArray())
+}
+
+publishing{
+    publications{
+        create<MavenPublication>("maven"){
+            groupId = "com.github.smol"
+            artifactId = "kotmindy"
+            version = "v0.1"
+            
+            from(components["java"])
+        }
+    }
 }
 
 tasks.register<Copy>("deploy"){
