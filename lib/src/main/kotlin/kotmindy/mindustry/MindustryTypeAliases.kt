@@ -1,4 +1,4 @@
-package com.github.smol.kotmindy.mindustry
+package kotmindy.mindustry
 
 
 typealias MUnit = mindustry.gen.Unit

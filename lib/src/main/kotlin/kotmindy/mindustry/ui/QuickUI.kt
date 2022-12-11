@@ -1,7 +1,7 @@
-package com.github.smol.kotmindy.mindustry.ui
+package kotmindy.mindustry.ui
 
 import mindustry.*
-import com.github.smol.kotmindy.*
+import kotmindy.*
 
 private val pair = RunDen({}, {})
 

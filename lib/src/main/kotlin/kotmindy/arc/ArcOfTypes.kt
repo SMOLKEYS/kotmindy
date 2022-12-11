@@ -1,4 +1,4 @@
-package com.github.smol.kotmindy.arc
+package kotmindy.arc
 
 import arc.struct.*
 

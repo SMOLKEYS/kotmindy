@@ -1,7 +1,7 @@
-package com.github.smol.kotmindy.mindustry.events
+package kotmindy.mindustry.events
 
 import mindustry.game.EventType.*
-import com.github.smol.kotmindy.arc.events.*
+import kotmindy.arc.events.*
 
 //TODO only defines common events
 
@@ -83,4 +83,6 @@ fun deposit(cons: DepositEvent.() -> Unit) = listen<DepositEvent>(cons)
 
 fun tap(cons: TapEvent.() -> Unit) = listen<TapEvent>(cons)
 
-fun updateT(cons: () -> Unit) = listenTrigger(Trigger.update, cons)
+fun onUpdate(cons: () -> Unit) = listenTrigger(Trigger.update, cons)
+
+fun onDraw(cons: () -> Unit) = listenTrigger(Trigger.draw, cons)
