@@ -9,13 +9,13 @@ inline fun <reified T : Building> forEachBuild(
     crossinline predicate: (T) -> Boolean = { it is T },
     crossinline cons: T.() -> Unit
 ) = Groups.build.each{
-    if(predicate(it) && it is T) cons(it)
+    if(it is T && predicate(it)) cons(it)
 }
 
 
-inline fun <T : MUnit> forEachUnit(
+inline fun <reified T : MUnit> forEachUnit(
     crossinline predicate: (T) -> Boolean = { it is T },
     crossinline cons: T.() -> Unit
 ) = Groups.unit.each{
-    if(predicate(it) && it is T) cons(it)
+    if(it is T && predicate(it)) cons(it)
 }
