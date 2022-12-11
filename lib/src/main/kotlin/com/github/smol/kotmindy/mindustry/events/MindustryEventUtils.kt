@@ -79,4 +79,4 @@ fun withdraw(cons: WithdrawEvent.() -> Unit) = on<WithdrawEvent>(cons)
 
 fun deposit(cons: DepositEvent.() -> Unit) = on<DepositEvent>(cons)
 
-fun tap(cons: TapEvent.()) = on<TapEvent>(cons)
+fun tap(cons: TapEvent.() -> Unit) = on<TapEvent>(cons)
