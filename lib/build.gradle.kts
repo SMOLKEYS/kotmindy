@@ -31,20 +31,20 @@ dependencies {
 tasks.jar{
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-	manifest{
-		attributes["Main-Class"] = "com.github.smol.kotmindy.KotMindyKt"
-	}
+    manifest{
+        attributes["Main-Class"] = "com.github.smol.kotmindy.KotMindyKt"
+    }
 
-	from(*configurations.runtimeClasspath.files.map { if (it.isDirectory()) it else zipTree(it) }.toTypedArray())
+    from(*configurations.runtimeClasspath.files.map { if (it.isDirectory()) it else zipTree(it) }.toTypedArray())
 }
 
 tasks.register<Copy>("deploy"){
-	dependsOn("jar")
+    dependsOn("jar")
 
-	from("build/libs/lib.jar")
-	into("..")
+    from("build/libs/lib.jar")
+    into("..")
 
-	doLast{
-		delete("build/libs/lib.jar")
-	}
+    doLast{
+        delete("build/libs/lib.jar")
+    }
 }
