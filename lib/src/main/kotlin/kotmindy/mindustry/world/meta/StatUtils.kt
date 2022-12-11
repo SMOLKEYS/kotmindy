@@ -15,7 +15,7 @@ fun Stats.replace(stat: Stat, value: Float){
 
 fun Stats.replacePercent(stat: Stat, value: Float){
     this.remove(stat)
-    this.add(stat, StatValues.number((value * 100f).toInt(), StatUnit.percent))
+    this.add(stat, StatValues.number((value * 100f), StatUnit.percent))
 }
 
 fun Stats.replace(stat: Stat, value: Boolean){
