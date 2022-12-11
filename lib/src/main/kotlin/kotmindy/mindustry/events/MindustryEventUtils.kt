@@ -1,6 +1,7 @@
 package kotmindy.mindustry.events
 
 import mindustry.game.EventType.*
+import kotmindy.*
 import kotmindy.arc.events.*
 
 //TODO only defines common events
@@ -83,6 +84,6 @@ fun deposit(cons: DepositEvent.() -> Unit) = listen<DepositEvent>(cons)
 
 fun tap(cons: TapEvent.() -> Unit) = listen<TapEvent>(cons)
 
-fun onUpdate(cons: () -> Unit) = listenTrigger(Trigger.update, cons)
+fun onUpdate(cons: BlankRun) = listenTrigger(Trigger.update, cons)
 
-fun onDraw(cons: () -> Unit) = listenTrigger(Trigger.draw, cons)
+fun onDraw(cons: BlankRun) = listenTrigger(Trigger.draw, cons)
