@@ -42,7 +42,7 @@ publishing{
         create<MavenPublication>("maven"){
             groupId = "com.github.smolkeys"
             artifactId = "kotmindy"
-            version = "v0.2"
+            version = "v0.3"
             
             from(components["java"])
         }
