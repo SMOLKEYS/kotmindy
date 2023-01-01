@@ -6,13 +6,10 @@ import kotmindy.*
 inline fun <reified T> listen(crossinline cons: RunR<T>) = Events.on(T::class.java){ cons(it) }
 
 inline fun <reified T> listenOnce(crossinline cons: RunR<T>){
-    val tee = T::class.java
-    val consu = cons
-    
-    Events.on(tee){
+    Events.on(T::class.java){
         cons(it)
         
-        Events.remove(tee, consu)
+        Events.remove(T::class.java, cons)
     }
 }
 
