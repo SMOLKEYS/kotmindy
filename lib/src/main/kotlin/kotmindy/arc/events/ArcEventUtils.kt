@@ -5,7 +5,7 @@ import kotmindy.*
 
 inline fun <reified T> listen(crossinline cons: RunR<T>) = Events.on(T::class.java){ cons(it) }
 
-inline fun <reified T> listenOnce(crossinline cons: RunR<T>){
+inline fun <reified T> listenOnce(noinline cons: RunR<T>){
     Events.on(T::class.java){
         cons(it)
         
